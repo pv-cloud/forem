@@ -50,3 +50,16 @@ en:
       unparsable: Podcast's rss couldn't be parsed
       unplayable: This podcast may not be playable in the browser
       ssl_failed: SSL certificate verify failed while fetching podcast's feed_url
+
+  activerecord:
+    models: 
+      user: "User"
+    attributes:
+      user:
+        username: "Username"
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: "should contain only alphabets and numbers. Maximum size is 30 characters."

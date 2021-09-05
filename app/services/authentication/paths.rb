@@ -3,6 +3,8 @@ module Authentication
   module Paths
     # Returns the authentication path for the given provider
     def self.authentication_path(provider_name, **kwargs)
+      provider_name = "google_oauth2" if provider_name.to_s == "googleoauth2"
+
       Rails.application.routes.url_helpers.public_send(
         "user_#{provider_name}_omniauth_authorize_path", **kwargs
       )
@@ -11,6 +13,7 @@ module Authentication
     # Returns the sign in URL for the given provider
     def self.sign_in_path(provider_name, **kwargs)
       url_helpers = Rails.application.routes.url_helpers
+      provider_name = "google_oauth2" if provider_name.to_s == "googleoauth2"
 
       callback_url_helper = "user_#{provider_name}_omniauth_callback_path"
       mandatory_params = {

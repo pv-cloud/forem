@@ -75,6 +75,16 @@ module Constants
         providers: {
           description: "How can users sign in?",
           placeholder: ""
+        },
+        google_client_id: {
+          description:
+          "The \"Client ID\" code for the Google Project",
+          placeholder: "com.example.app"
+        },
+        google_client_secret: {
+          description:
+          "The \"Client SECRET\" code for the Google Project",
+          placeholder: "com.example.app"
         }
       }.freeze
     end

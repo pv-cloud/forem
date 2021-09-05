@@ -25,6 +25,8 @@ module Settings
     field :require_captcha_for_email_password_registration, type: :boolean, default: false
     field :twitter_key, type: :string, default: ApplicationConfig["TWITTER_KEY"]
     field :twitter_secret, type: :string, default: ApplicationConfig["TWITTER_SECRET"]
+    field :google_client_id, type: :string, default: ApplicationConfig["GOOGLE_CLIENT_ID"]
+    field :google_client_secret, type: :string, default: ApplicationConfig["GOOGLE_CLIENT_SECRET"]
 
     # Google ReCATPCHA keys
     field :recaptcha_site_key, type: :string, default: ApplicationConfig["RECAPTCHA_SITE"]

@@ -11,7 +11,7 @@ module Authentication
   module Providers
     # Retrieves a provider that is both available and enabled
     def self.get!(provider_name)
-      name = provider_name.to_s.titleize
+      name = provider_name.to_s.titleize.delete(" ")
 
       unless available?(provider_name)
         raise(
@@ -37,7 +37,7 @@ module Authentication
     end
 
     def self.available?(provider_name)
-      Authentication::Providers.const_defined?(provider_name.to_s.titleize)
+      Authentication::Providers.const_defined?(provider_name.to_s.titleize.delete(" "))
     end
 
     # Returns enabled providers

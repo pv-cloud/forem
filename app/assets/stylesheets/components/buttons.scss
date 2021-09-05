@@ -20,6 +20,10 @@
   --brand-email-bg: #24292e;
   --brand-email-color: #fff;
   --brand-email-bg-hover: #000;
+
+  --brand-google-bg: #ebf0f5;
+  --brand-google-color: rgb(252, 110, 110);
+  --brand-google-bg-hover: rgb(254, 241, 241);
 }
 
 // Basic styling
@@ -256,6 +260,17 @@
   --bg-inverted-hover: var(--brand-apple-bg-hover);
   --color-inverted: var(--brand-apple-color);
   --color-inverted-hover: var(--brand-apple-color);
+}
+
+.crayons-btn--brand-googleoauth2 {
+  --bg: var(--brand-google-bg);
+  --bg-hover: var(--brand-google-bg-hover);
+  --color: var(--brand-google-color);
+  --color-hover: var(--brand-google-color);
+  --bg-inverted: var(--brand-google-bg);
+  --bg-inverted-hover: var(--brand-google-bg-hover);
+  --color-inverted: var(--brand-google-color);
+  --color-inverted-hover: var(--brand-google-color);
 }
 
 .crayons-btn--brand-twitter {
