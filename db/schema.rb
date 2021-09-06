@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_042422) do
+ActiveRecord::Schema.define(version: 2021_09_06_055451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -1301,6 +1301,7 @@ ActiveRecord::Schema.define(version: 2021_07_20_042422) do
     t.integer "following_users_count", default: 0, null: false
     t.datetime "github_repos_updated_at", default: "2017-01-01 05:00:00"
     t.string "github_username"
+    t.string "googleoauth2_username"
     t.datetime "invitation_accepted_at"
     t.datetime "invitation_created_at"
     t.integer "invitation_limit"

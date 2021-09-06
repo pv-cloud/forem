@@ -315,11 +315,11 @@ Devise.setup do |config|
   # up on your models and hooks.
 
   # Fun fact, unless Twitter is last, it doesn't work for some reason.
+  config.omniauth :apple, setup: APPLE_OMNIAUTH_SETUP
+  config.omniauth :google_oauth2, setup: GOOGLE_OMNIAUTH_SETUP
   config.omniauth :facebook, setup: FACEBOOK_OMNIAUTH_SETUP
   config.omniauth :github, setup: GITHUB_OMNIUATH_SETUP
   config.omniauth :twitter, setup: TWITTER_OMNIAUTH_SETUP
-  config.omniauth :apple, setup: APPLE_OMNIAUTH_SETUP
-  config.omniauth :google_oauth2, setup: GOOGLE_OMNIAUTH_SETUP
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

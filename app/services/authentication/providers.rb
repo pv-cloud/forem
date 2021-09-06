@@ -32,7 +32,9 @@ module Authentication
 
     def self.available
       Authentication::Providers::Provider.subclasses.map do |subclass|
-        subclass.name.demodulize.downcase.to_sym
+        a = subclass.name.demodulize.downcase
+        a = "google_oauth2" if a == "googleoauth2"
+        a.to_sym
       end.sort
     end
 

@@ -7,13 +7,11 @@ module Authentication
 
       def new_user_data
         name = raw_info.name.presence || info.name
-        remote_profile_image_url = info.image.to_s.gsub("_normal", "")
 
         {
           email: info.email.to_s,
           name: name,
-          remote_profile_image_url: Users::SafeRemoteProfileImageUrl.call(remote_profile_image_url),
-          google_username: info.nickname
+          googleoauth2_username: info.nickname
         }
       end
 
@@ -23,7 +21,7 @@ module Authentication
 
       def existing_user_data
         {
-          google_username: info.nickname
+          googleoauth2_username: info.nickname
         }
       end
 
@@ -32,12 +30,9 @@ module Authentication
       end
 
       def self.sign_in_path(**kwargs)
-        # see https://github.com/arunagw/omniauth-twitter#authentication-options
-        mandatory_params = { secure_image_url: true }
-
         ::Authentication::Paths.sign_in_path(
           provider_name,
-          **kwargs.merge(mandatory_params),
+          **kwargs,
         )
       end
 
