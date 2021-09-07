@@ -660,6 +660,6 @@ class User < ApplicationRecord
   end
 
   def confirmation_required?
-    ForemInstance.smtp_enabled?
+    ForemInstance.smtp_enabled? && ENV.fetch("ENABLE_EMAIL_CONFIRMATION", false)
   end
 end
