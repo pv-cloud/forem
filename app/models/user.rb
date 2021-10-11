@@ -660,6 +660,6 @@ class User < ApplicationRecord
   end
 
   def confirmation_required?
-    ForemInstance.smtp_enabled? && ENV.fetch("ENABLE_EMAIL_CONFIRMATION", false)
+    ForemInstance.smtp_enabled? && ActiveModel::Type::Boolean.new.cast(ENV.fetch("ENABLE_EMAIL_CONFIRMATION", false))
   end
 end

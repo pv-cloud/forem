@@ -24,7 +24,8 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.persisted?
       update_first_user_permissions(resource)
 
-      if ForemInstance.smtp_enabled? && ENV.fetch("ENABLE_EMAIL_CONFIRMATION", false)
+      if ForemInstance.smtp_enabled? && ActiveModel::Type::Boolean.new.cast(ENV.fetch("ENABLE_EMAIL_CONFIRMATION",
+                                                                                      false))
         redirect_to confirm_email_path(email: resource.email)
       else
         sign_in(resource)
